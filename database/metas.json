@@ -1,0 +1,35 @@
+[
+    {
+        "id": "celular",
+        "nombre": "Nuevo celular",
+        "icono": "📱",
+        "ahorrado": 520000,
+        "objetivo": 800000,
+        "color": "green"
+    },
+    {
+        "id": "viaje",
+        "nombre": "Viaje a la playa",
+        "icono": "✈️",
+        "ahorrado": 150000,
+        "objetivo": 500000,
+        "color": "blue"
+    },
+    {
+        "id": "computador",
+        "nombre": "Computador",
+        "icono": "💻",
+        "ahorrado": 600000,
+        "objetivo": 2000000,
+        "color": "purple"
+    }
+    ,
+    {
+        "id": "PC",
+        "nombre": "Computador",
+        "icono": "X",
+        "ahorrado": 444,
+        "objetivo": 2000000,
+        "color": "blue"
+    }
+]
