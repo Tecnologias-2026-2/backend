@@ -1,102 +1,28 @@
-🔧 Backend – Nombre del Proyecto
+# Backend
 
-Este repositorio contiene la implementación del backend del sistema en dos tecnologías distintas:
+Este repositorio contiene implementaciones de un API REST organizadas en tres ramas, cada una con una tecnología distinta:
 
-🟢 Rama node-version → Implementación con Node.js
-🔵 Rama php-version → Implementación con PHP
+- `template_node`: API desarrollada con Node.js.
+- `template_php`: API desarrollada con PHP.
+- `template_python`: API desarrollada con Python y Flask.
 
-Cada rama contiene su propia estructura y configuración independiente.
+## Arquitectura
 
-👥 Integrantes
+Las tres ramas organizan el API con una estructura basada en MVC, separando las responsabilidades en estas carpetas:
 
-Nombre completo – Código
-Nombre completo – Código
+- `routes/`: define las rutas y los endpoints del API.
+- `controllers/`: recibe las solicitudes y coordina la lógica de cada operación.
+- `models/`: contiene el acceso y las operaciones sobre los datos.
+- `database/`: agrupa la conexión y los recursos relacionados con la base de datos.
 
-🎯 Objetivo del Backend
+Esta separación facilita el mantenimiento y la organización de las operaciones REST, como consultar, crear, actualizar y eliminar registros.
 
-Implementar un servidor capaz de:
+## Rama `test_supa`
 
-Gestionar solicitudes HTTP.
-Procesar datos enviados por el cliente.
-Conectarse a una base de datos.
-Implementar operaciones CRUD.
-Retornar respuestas en formato JSON.
+`test_supa` es una rama de prueba basada en la implementación PHP. Incluye un ejemplo para conectar con Supabase PostgreSQL y sincronizar datos desde `database/metas.json` hacia `public.products` mediante:
 
+```sh
+php database/sync_metas.php
+```
 
-Estructura del proyecto
-
-🌿 Estructura de Ramas
-🟢 Rama: node-version
-
-Backend desarrollado con Node.js sin frameworks.
-
-Ejecución Local
-npm install
-npm start
-
-Servidor:
-http://localhost:3000
-
-Despliegue
-Compatible con:
-Render
-Railway
-VPS Node
-
-Debe usar:
-const PORT = process.env.PORT || 3000;
-
-🔵 Rama: php-version
-
-Backend desarrollado con PHP utilizando estructura modular básica.
-
-Ejecución Local
-
-Si usan servidor embebido de PHP:
-
-php -S localhost:8000
-
-Servidor:
-http://localhost:8000
-
-Despliegue
-
-Compatible con:
-
-Render (servicio PHP)
-InfinityFree
-Hostinger
-XAMPP (local)
-
-📡 Endpoints Implementados
-Método	Ruta	Descripción
-GET	/api/users	Obtener usuarios
-POST	/api/users	Crear usuario
-PUT	/api/users/{id}	Actualizar usuario
-DELETE	/api/users/{id}	Eliminar usuario
-🗄️ Base de Datos
-
-El modelo de base de datos es el mismo para ambas ramas.
-
-Ubicación del script:
-
-/database/script.sql
-
-
-🔐 Validaciones Implementadas
-
-Campos obligatorios
-Validación de formato email
-Manejo de errores HTTP
-Respuestas en formato JSON
-
-🌍 URLs en Producción
-
-Node:
-
-https://nombre-app-node.onrender.com
-
-
-PHP:
-
-https://nombre-app-php.onrender.com
+La conexión se configura con variables de entorno (`DATABASE_URL` o `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` y `DB_PORT`) y requiere SSL. No guardes contraseñas ni claves de Supabase en el repositorio.
